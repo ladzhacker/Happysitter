@@ -1,0 +1,54 @@
+<mvc:View
+    controllerName="com.applexus.happysitter.controller.confirmpage"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m"
+>
+    <Page id="opo">
+        <content>
+            <Image
+                id="_IDGenImage2"
+                src="https://img.freepik.com/premium-photo/blue-yes-check-mark-icon-symbol-tick-ok-correct-button-illustration-choice-sign-isolated-white-checkmark-background-with-approved-speech-bubble-checklist-flat-design-concept-3d-rendering_79161-1952.jpg"
+                height="50%"
+                width="100%"
+            />
+
+            <Label
+                id="jkriv"
+                text="Welcome to Happysitter Login to Continue "
+                width="100%"
+                labelFor="input-b"
+                design="Bold"
+                textAlign="Center"
+            />
+            <Label
+                id="jkbriv"
+                text="This is your LoginID "
+                width="100%"
+                labelFor="input-b"
+                design="Bold"
+                textAlign="Center"
+            />
+            <Label
+                id="jkgbriv"
+                text=""
+                width="100%"
+                labelFor="input-b"
+                design="Bold"
+                textAlign="Center"
+            />
+
+            <Button
+                id="890"
+                press="onnav"
+                text="Login"
+                type="Transparent"
+                width="100%"
+            />
+        </content>
+    </Page>
+
+    <!-- <Text id ="34" text="Kindly Login to Continue"></Text> -->
+</mvc:View>

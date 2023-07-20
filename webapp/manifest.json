@@ -1,0 +1,219 @@
+{
+  "_version": "1.17.0",
+  "sap.app": {
+    "id": "com.applexus.happysitter",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.9.7",
+      "toolsId": "8355aaec-7fdd-4428-a93e-3bbda0aefdbc"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZB13_03_HST_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.71.57",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.applexus.happysitter.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.applexus.happysitter.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "Routelogin",
+          "pattern": ":?query:",
+          "target": [
+            "Targetlogin"
+          ]
+        },
+        {
+          "name": "BRegister",
+          "pattern": "Bregister",
+          "target": [
+            "SitterReg"
+          ]
+        },
+        {
+          "name": "bhome",
+          "pattern": "bhome/{LoginId}",
+          "target": [
+            "target4"
+          ]
+        },
+        {
+          "name": "pregister",
+          "pattern": "pregister",
+          "target": [
+            "target5"
+          ]
+        },
+        {
+          "name": "phome",
+          "pattern": "phome/{LoginId}",
+          "target": [
+            "target6"
+          ]
+        },
+        {
+          "name": "admin",
+          "pattern": "admin",
+          "target": [
+            "target7"
+          ]
+        },
+        {
+          "name": "pbook",
+          "pattern": "pbook/{LoginId}",
+          "target": [
+            "target8"
+          ]
+        },
+        {
+          "name": "confirmpage",
+          "pattern": "confirmpage/{LoginId}",
+          "target": [
+            "target9"
+          ]
+        }
+      ],
+      "targets": {
+        "Targetlogin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "login",
+          "viewName": "login"
+        },
+        "SitterReg": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "bsregister",
+          "viewName": "bsregister"
+        },
+        "target4": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "bhome",
+          "viewName": "bhome"
+        },
+        "target5": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "pregister",
+          "viewName": "pregister"
+        },
+        "target6": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "phome",
+          "viewName": "phome"
+        },
+        "target7": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "admin",
+          "viewName": "admin"
+        },
+        "target8": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "pbook",
+          "viewName": "pbook"
+        },
+        "target9": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "confirmpage",
+          "viewName": "confirmpage"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.applexus.happysitter.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

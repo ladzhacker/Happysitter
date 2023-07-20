@@ -1,0 +1,321 @@
+<mvc:View
+    xmlns:tnt="sap.tnt"
+    controllerName="com.applexus.happysitter.controller.phome"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+    <FlexBox
+        id="_IDGenFlexBox15"
+        height=""
+        alignItems="Center"
+        justifyContent="End"
+    >
+        <Button
+            id="_IDGenButton31"
+            press="onlogin"
+            icon="sap-icon://log"
+            text="Logout"
+        />
+    </FlexBox>
+
+    <FlexBox
+        id="_IDGenFlexBox1"
+        height=""
+        alignItems="Center"
+        justifyContent="End"
+    >
+        <Button
+            id="girl"
+            text="Bookings"
+            width="150px"
+            press="ondrag"
+            icon="sap-icon://approvals"
+            class="sapUiSmallMarginBottom"
+        />
+    </FlexBox>
+
+    <Toolbar id="_IDGenToolbar1">
+        <Button
+            id="_IDGenButton1"
+            type="Back"
+            press="onPress"
+        />
+        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+        <Title
+            id="_IDGenTitle1"
+            text="Parent Dashboard"
+            level="H2"
+        />
+        <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+    </Toolbar>
+
+    <f:SimpleForm
+        id="SimpleFormChange354"
+        editable="true"
+        layout="ResponsiveGridLayout"
+        title="BabySitter Booking"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanL="4"
+        emptySpanM="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        singleContainerFullSize="false"
+    >
+        <f:content>
+            <Label
+                id="lbl_1"
+                text="Preffered Location"
+                required="true"
+            />
+            <Select
+                id="p1"
+                selectedKey="{PreferredLocation}"
+            >
+                <core:Item
+                    id="l1"
+                    key="KZM"
+                    text="Kazhakoottam"
+                />
+
+                <core:Item
+                    id="l2"
+                    key="KLT"
+                    text="Kulathoor"
+                />
+
+                <core:Item
+                    id="l4"
+                    key="ULO"
+                    text="Ulloor"
+                />
+            </Select>
+            <Label
+                id="Pshift"
+                text="Preferred Shift"
+                required="true"
+            />
+            <Select
+                id="s1"
+                selectedKey="{PreferredShift}"
+            >
+                <core:Item
+                    id="it1"
+                    key="M"
+                    text="Morning"
+                />
+
+                <core:Item
+                    id="it2"
+                    key="N"
+                    text="Night"
+                />
+                <core:Item
+                    id="itf2"
+                    key="F"
+                    text="Fulltime"
+                />
+            </Select>
+            <Label
+                id="_IDGenLabel4"
+                text="Start Date"
+                required="true"
+            />
+            <DatePicker
+                id="DP2"
+                valueFormat="yyyy-MM-dd"
+                displayFormat="long"
+                class="sapUiSmallMarginBottom"
+            />
+            <Label
+                id="_IDGenLabegl4"
+                text="End Date"
+                required="true"
+            />
+            <DatePicker
+                id="DPF2"
+                valueFormat="yyyy-MM-dd"
+                displayFormat="long"
+                class="sapUiSmallMarginBottom"
+            />
+            <Label
+                id="_IDGenLabegl4J"
+                text="Multiple Kid Option"
+            />
+            <RadioButtonGroup
+                id="radio"
+                columns="5"
+                valueState="Error"
+                class="sapUiMediumMarginBottom"
+            >
+                <RadioButton
+                    id="RBY3-1"
+                    text="Y"
+                />
+                <RadioButton
+                    id="RBG3-2"
+                    text="N"
+                />
+            </RadioButtonGroup>
+            <Label
+                id="_IDGenhLabegl4J"
+                text=""
+            />
+            <Button
+                id="tyu"
+                type="Accept"
+                press="onbookclick"
+                text="Submit"
+            />
+        </f:content>
+    </f:SimpleForm>
+
+    <Table
+        id="idProductsTable"
+        visible="true"
+        inset="false"
+        items="{json>/BABYSITTER}"
+    >
+        <columns>
+            <Column
+                id="_IDGenColumn1"
+                width="12em"
+            >
+                <Text
+                    id="_IDGenText1"
+                    text="Babysitter Name"
+                />
+            </Column>
+
+            <Column
+                id="_IDGenColumn2"
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <Text
+                    id="_IDGenText2"
+                    text="Babysitter e-mail"
+                />
+            </Column>
+
+            <Column
+                id="_IDGenColumn3"
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <Text
+                    id="_IDGenText3"
+                    text="Babysitter PhoneNo:"
+                />
+            </Column>
+
+            <Column
+                id="_IDGenColumn5"
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <Text
+                    id="_IDGenText5"
+                    text="Babysitter Preffered Location"
+                />
+            </Column>
+            <Column
+                id="_IDGenCollumn5"
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <Text
+                    id="_IDGenTeHxt5"
+                    text="Babysitter Preffered Shift"
+                />
+            </Column>
+            <Column
+                id="_IDGenColklumn5"
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <Text
+                    id="_IDGenTehHhxt5"
+                    text="Multiple Kid Option"
+                />
+            </Column>
+
+            <Column
+                id="_IDGenColumn6"
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            />
+        </columns>
+        <items>
+            <ColumnListItem
+                id="_IDGenColumnListItem1"
+                vAlign="Middle"
+            >
+                <cells>
+                    <!-- <Text
+                        id="_IDGenText676"
+                        text="{json>BLoginid}"
+                    /> -->
+                    <Text
+                        id="_IDGenText6"
+                        text="{json>BsName}"
+                    />
+
+                    <Text
+                        id="_IDGenText8"
+                        text="{json>Email}"
+                    />
+
+                    <Text
+                        id="_IDGenText9"
+                        text="{json>PhoneNo}"
+                    />
+
+                    <Text
+                        id="_IDGenText10"
+                        text=" {
+                                    path :'json>PreferredLocation',
+                                    formatter: '.formatter.statusText'
+                                     }"
+                    />
+
+                    <Text
+                        id="_IDGenText11"
+                        text=" {
+                                    path :'json>PreferredShift',
+                                    formatter: '.formatter.statusText'
+                                     }"
+                    />
+
+                    <Text
+                        id="_IDGenTegjxt11"
+                        text="{json>MultipleKidOption}"
+                    />
+
+                    <Button
+                        id="_IDGegnButton1"
+                        text="Book Now"
+                        press="onbook"
+                    />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+    </Page>
+</mvc:View>
