@@ -175,7 +175,7 @@
                     text="Fulltime"
                 />
             </Select>
-              <ComboBox
+              <!-- <ComboBox
 
               id="cb5"
 
@@ -191,7 +191,7 @@
 
                   />
 
-             </ComboBox>  
+             </ComboBox>   -->
               
             <Label
                 id="_IFDGenLabel41"
